@@ -22,15 +22,18 @@
   <main>
     <section>
       <h2>Зв'яжіться з нами</h2>
-      <form>
-        <label>Ім'я:</label>
-        <input type="text" required>
-        <label>Email:</label>
-        <input type="email" required>
-        <label>Повідомлення:</label>
-        <textarea required></textarea>
-        <button type="submit">Надіслати</button>
-      </form>
+      <form action="https://formspree.io/f/xgvkvnvv" method="POST">
+  <label>Ім'я:</label>
+  <input type="text" name="name" required>
+
+  <label>Email:</label>
+  <input type="email" name="email" required>
+
+  <label>Повідомлення:</label>
+  <textarea name="message" required></textarea>
+
+  <button type="submit">Надіслати</button>
+</form>
     </section>
   </main>
 
