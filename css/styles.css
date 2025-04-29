@@ -1,3 +1,18 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.zoom-image {
+  width: 300px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.zoom-image.zoomed {
+  transform: scale(2); /* збільшення в 2 рази */
+}
 * {
     margin: 0;
     padding: 0;
