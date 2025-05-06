@@ -11,51 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 letlet lastScrollY = window.scrollY;
 
-window.addEventListener("scroll", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const img = document.querySelector("header img");
-  const currentScrollY = window.scrollY;
 
-  const fadeStart = 0;
-  const fadeEnd = 300;
-  let opacity;
+  window.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+    const fadeStart = 0;
+    const fadeEnd = 300;
 
-  if (currentScrollY > fadeStart) {
-    opacity = 1 - (currentScrollY - fadeStart) / (fadeEnd - fadeStart);
-    opacity = Math.max(opacity, 0);
-  } else {
-    opacity = 1;
-  }
+    let opacity = 1;
 
-  if (currentScrollY < lastScrollY || currentScrollY <= fadeStart) {
+    if (scrollY >= fadeStart && scrollY <= fadeEnd) {
+      opacity = 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
+    } else if (scrollY > fadeEnd) {
+      opacity = 0;
+    }
+
     img.style.opacity = opacity;
-  } else if (currentScrollY > lastScrollY) {
-    img.style.opacity = opacity;
-  }
-
-  lastScrollY = currentScro llY;
-}); lastScrollY = window.scrollY;
-
-window.addEventListener("scroll", function () {
-  const img = document.querySelector("header img");
-  const currentScrollY = window.scrollY;
-
-  const fadeStart = 0;
-  const fadeEnd = 300;
-  let opacity;
-
-  if (currentScrollY > fadeStart) {
-    opacity = 1 - (currentScrollY - fadeStart) / (fadeEnd - fadeStart);
-    opacity = Math.max(opacity, 0);
-  } else {
-    opacity = 1;
-  }
-
-  if (currentScrollY < lastScrollY || currentScrollY <= fadeStart) {
-    img.style.opacity = opacity;
-  } else if (currentScrollY > lastScrollY) {
-    img.style.opacity = opacity;
-  }
-
-  lastScrollY = currentScrollY;
+  });
 });
-  
